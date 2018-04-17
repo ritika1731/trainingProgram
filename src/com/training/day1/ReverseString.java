@@ -15,7 +15,7 @@ public class ReverseString {
 		
 		System.out.println("Reverse String is: ");
 		
-		//StringBuilder is inbuilt reverse method
+		//StringBuilderinitialized to the contents of the specified string.
 		 for (String part : value.split(" ")) {
 			    System.out.print(new StringBuilder(part).reverse().toString());
 			    System.out.print(" ");
