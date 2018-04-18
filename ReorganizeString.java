@@ -17,7 +17,7 @@ public class ReorganizeString {
 		{
 			if(arr[i]!=arr[i+1])
 			{
-				System.out.println(input);
+				//System.out.println(input);
 				break;
 
 			}
