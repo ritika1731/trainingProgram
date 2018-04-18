@@ -2,16 +2,24 @@ package com.training.day1;
 
 import java.util.Scanner;
 
+import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.Logger;
+
 public class Duplicates {
+	private final static Logger logger = Logger.getLogger(Duplicates.class.getName());
+
 	 public static void main(String[] args)
 	 {
-		 System.out.println("Enter String:");
-		 Scanner sc=new Scanner(System.in);
-		 String value=sc.nextLine();
+		BasicConfigurator.configure();
+
+		 //System.out.println("Enter String:");
+		 logger.info("Enter String:");
+		final Scanner sc=new Scanner(System.in);
+		final String value=sc.nextLine();
 		 char [] arr=value.toCharArray();
 		 
 		 int count=0;
-		 int length=value.length();
+		 int length= value.length();
 		 
 		 for (int i = 0; i < length-1; i++)
 		 {
@@ -27,11 +35,15 @@ public class Duplicates {
 		 }
 			if(count>0)
 			{
-			  System.out.println("true");
+			 // System.out.println("true");
+				 logger.info("true");
+
 			}
 			else
 			  {
-				  System.out.println("false");
+				  //System.out.println("false");
+					 logger.info("true");
+
 			  }
 	 }
 }
