@@ -9,15 +9,16 @@ public class ReverseString {
 	private final static Logger logger = Logger.getLogger(Duplicates.class.getName());
 	public static String isReverse(String value) {
 		//StringBuilderinitialized to the contents of the specified string.
-
+		String reverse="";
 		for (String part : value.split(" ")) {
-		    System.out.print(new StringBuilder(part).reverse().toString());
-		   
-		   // System.out.print(" ");
-			
-				
+		   // System.out.print(new StringBuilder(part).reverse().toString());
+		   reverse=new StringBuilder(part).reverse().toString();
+		//System.out.print(value);
+			//logger.info(" ");
+		    System.out.print(reverse);
+
 		}
-		return value;
+		return reverse;
 		    
 	}
 
