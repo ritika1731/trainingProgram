@@ -19,10 +19,10 @@ public class DateTime {
 		System.out.println("Enter the Second Date and time dd-MMM-yyyy HH:mm:ss: ");
 		String date1=sc.next();*/
 		
-		final String date="31-JAN-2018 08:18:18";
+		String date="31-JAN-2018 08:18:18";
 		String date1="01-FEB-2018 09:18:18";
 
-		SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy HH:mm:ss");
+		final SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy HH:mm:ss");
 		Date date2=null;
 		Date date3=null;
 		//long difference=0;

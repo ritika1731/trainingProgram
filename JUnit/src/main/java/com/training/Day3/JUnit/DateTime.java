@@ -19,10 +19,10 @@ public class DateTime {
 		System.out.println("Enter the Second Date and time dd-MMM-yyyy HH:mm:ss: ");
 		String date1=sc.next();*/
 		
-		final String date="31-JAN-2018 08:18:18";
+		String date="31-JAN-2018 08:18:18";
 		String date1="01-FEB-2018 09:18:18";
 
-		SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy HH:mm:ss");
+		final SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy HH:mm:ss");
 		Date date2=null;
 		Date date3=null;
 		//long difference=0;
@@ -31,7 +31,7 @@ public class DateTime {
 		    date2 = dateFormat.parse(date);
 		    date3 = dateFormat.parse(date1);
 		    
-		    long difference=date3.getTime()-date2.getTime();
+		    final long difference=date3.getTime()-date2.getTime();
 		    long diffSeconds = difference / 1000 % 60;
 			long diffMinutes = difference / (60 * 1000) % 60;
 			long diffHours = difference / (60 * 60 * 1000) % 24;
@@ -44,7 +44,8 @@ public class DateTime {
 			System.out.print(diffSeconds + " seconds.");
 		} catch (ParseException e) {
 		    // TODO Auto-generated catch block
-		    e.printStackTrace();
+		    //e.printStackTrace();
+			 logger.error("Your description here", e); 
 		}
 		
 		
