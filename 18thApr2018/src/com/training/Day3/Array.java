@@ -6,21 +6,11 @@ import java.util.Scanner;
 
 
 public class Array {
-
-	/*
-	public static < E > void printArray(E[] values) {  
+	 static Scanner sc=new Scanner(System.in);
+	
+	public static  < E > Boolean printArray(int values) {  
 		List<E> list=new ArrayList<>();
 
-	}*/
-	public static <E> void main(String[] args) {
-		// TODO Auto-generated method stub
-		List<E> list=new ArrayList<>();
-
-		System.out.println("Enter no.of elements:");
-		Scanner sc=new Scanner(System.in);
-
-		int values=sc.nextInt();
-		//String result=printArray(values);
 		for(int i=0;i<values;i++)
 		{
 			E input=(E) sc.next();
@@ -32,7 +22,20 @@ public class Array {
 			System.out.println(e);
 		}
 		sc.close();
+		return true;
+		
 	}
 
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+
+		System.out.println("Enter no.of elements:");
+		//Scanner sc=new Scanner(System.in);
+		int values=sc.nextInt();
+		
+		printArray(values);
+	}
+		
 
 }
