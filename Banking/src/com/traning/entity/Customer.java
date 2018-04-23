@@ -41,17 +41,7 @@ public class Customer {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	/**
-	 * @param customerId
-	 * @param firstName
-	 * @param lastName
-	 */
-	public Customer(String customerId, String firstName, String lastName) {
-		super();
-		this.customerId = customerId;
-		this.firstName = firstName;
-		this.lastName = lastName;
-	}
+	
 	
 	
 

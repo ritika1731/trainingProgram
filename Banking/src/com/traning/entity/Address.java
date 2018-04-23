@@ -67,19 +67,7 @@ public class Address {
 	public void setCity(String city) {
 		this.city = city;
 	}
-	/**
-	 * @param street
-	 * @param houseNumber
-	 * @param zipCode
-	 * @param city
-	 */
-	public Address(String street, String houseNumber, String zipCode, String city) {
-		super();
-		this.street = street;
-		this.houseNumber = houseNumber;
-		this.zipCode = zipCode;
-		this.city = city;
-	}
+
 		
 	
 }

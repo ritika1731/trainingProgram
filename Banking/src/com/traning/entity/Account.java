@@ -5,6 +5,7 @@ abstract class Account {
 	private Money balance;
 	private InterestRate interestRate;
 	private Period interestPeriod;
+	
 	/**
 	 * @return the balance
 	 */

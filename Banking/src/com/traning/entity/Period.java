@@ -18,12 +18,6 @@ public class Period {
 		this.interestPeriod = interestPeriod;
 	}
 
-	/**
-	 * @param interestPeriod
-	 */
-	public Period(float interestPeriod) {
-		super();
-		this.interestPeriod = interestPeriod;
-	}
+	
 	
 }

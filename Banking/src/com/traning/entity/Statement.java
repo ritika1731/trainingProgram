@@ -30,14 +30,6 @@ public class Statement {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	/**
-	 * @param date
-	 * @param content
-	 */
-	public Statement(Date date, String content) {
-		super();
-		this.date = date;
-		this.content = content;
-	}
+
 	
 }

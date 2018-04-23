@@ -18,12 +18,5 @@ public class Money {
 		this.balance = balance;
 	}
 
-	/**
-	 * @param balance
-	 */
-	public Money(float balance) {
-		super();
-		this.balance = balance;
-	}
 	
 }

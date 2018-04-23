@@ -33,14 +33,6 @@ public class PhoneNumber {
 		this.mobile = mobile;
 	}
 
-	/**
-	 * @param phone
-	 * @param mobile
-	 */
-	public PhoneNumber(String phone, String mobile) {
-		super();
-		this.phone = phone;
-		this.mobile = mobile;
-	}
+	
 	
 }

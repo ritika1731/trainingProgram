@@ -28,15 +28,7 @@ public class Bank {
 	public void setBranchName(String branchName) {
 		this.branchName = branchName;
 	}
-	/**
-	 * @param bankName
-	 * @param branchName
-	 */
-	public Bank(String bankName, String branchName) {
-		super();
-		this.bankName = bankName;
-		this.branchName = branchName;
-	}
+	
 	
 
 	
