@@ -5,23 +5,42 @@ public class PhoneNumber {
 	private String phone;
 	private String mobile;
 	
-	
-	
+	/**
+	 * @return the phone
+	 */
 	public String getPhone() {
 		return phone;
 	}
+
+	/**
+	 * @param phone the phone to set
+	 */
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
+
+	/**
+	 * @return the mobile
+	 */
 	public String getMobile() {
 		return mobile;
 	}
+
+	/**
+	 * @param mobile the mobile to set
+	 */
 	public void setMobile(String mobile) {
 		this.mobile = mobile;
 	}
-	@Override
-	public String toString() {
-		return "PhoneNumber [phone=" + phone + ", mobile=" + mobile + "]";
+
+	/**
+	 * @param phone
+	 * @param mobile
+	 */
+	public PhoneNumber(String phone, String mobile) {
+		super();
+		this.phone = phone;
+		this.mobile = mobile;
 	}
 	
 }
