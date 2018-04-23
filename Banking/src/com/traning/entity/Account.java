@@ -1,11 +1,39 @@
 package com.traning.entity;
 
+import java.util.List;
+
 abstract class Account {
 
 	private Money balance;
 	private InterestRate interestRate;
 	private Period interestPeriod;
-	
+	public List<Statement> statement;
+	public List<Customer> customer;
+
+	/**
+	 * @return the statement
+	 */
+	public List<Statement> getStatement() {
+		return statement;
+	}
+	/**
+	 * @param statement the statement to set
+	 */
+	public void setStatement(List<Statement> statement) {
+		this.statement = statement;
+	}
+	/**
+	 * @return the customer
+	 */
+	public List<Customer> getCustomer() {
+		return customer;
+	}
+	/**
+	 * @param customer the customer to set
+	 */
+	public void setCustomer(List<Customer> customer) {
+		this.customer = customer;
+	}
 	/**
 	 * @return the balance
 	 */

@@ -1,11 +1,40 @@
 package com.traning.entity;
 
+import java.util.List;
 
 abstract class Contact {
 	private PhoneNumber phone;
 	private PhoneNumber mobile;
 	private Email email;
 	public Address Address;
+	public List<Bank> bank;
+
+	/**
+	 * @return the bank
+	 */
+	public List<Bank> getBank() {
+		return bank;
+	}
+	/**
+	 * @param bank the bank to set
+	 */
+	public void setBank(List<Bank> bank) {
+		this.bank = bank;
+	}
+	
+	/**
+	 * @return the email
+	 */
+	public Email getEmail() {
+		return email;
+	}
+	
+	/**
+	 * @param email the email to set
+	 */
+	public void setEmail(Email email) {
+		this.email = email;
+	}
 	/**
 	 * @return the address
 	 */
@@ -41,12 +70,6 @@ abstract class Contact {
 	 */
 	public void setMobile(PhoneNumber mobile) {
 		this.mobile = mobile;
-	}
-	/**
-	 * @return the email
-	 */
-	public Email getEmail() {
-		return email;
 	}
 	
 	
