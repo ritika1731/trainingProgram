@@ -19,6 +19,14 @@ public class Email {
 
 	}
 
+	/**
+	 * @param email
+	 */
+	public Email(String email) {
+		super();
+		this.email = email;
+	}
+
 
 	
 }

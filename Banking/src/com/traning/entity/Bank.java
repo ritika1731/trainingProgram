@@ -6,6 +6,19 @@ public class Bank {
 
 	private String bankName;
 	private String branchName;
+	public List<Contact> contact;
+
+	/**
+	 * @param bankName
+	 * @param branchName
+	 * @param contact
+	 */
+	public Bank(String bankName, String branchName, List<Contact> contact) {
+		super();
+		this.bankName = bankName;
+		this.branchName = branchName;
+		this.contact = contact;
+	}
 	/**
 	 * @return the contact
 	 */
@@ -18,7 +31,6 @@ public class Bank {
 	public void setContact(List<Contact> contact) {
 		this.contact = contact;
 	}
-	public List<Contact> contact;
 	/**
 	 * @return the bankName
 	 */

@@ -25,6 +25,7 @@ public class Address {
 	public String getStreet() {
 		return street;
 	}
+	
 	/**
 	 * @param street the street to set
 	 */
@@ -68,6 +69,23 @@ public class Address {
 		this.city = city;
 	}
 
-		
+	/**
+	 * @param street
+	 * @param houseNumber
+	 * @param zipCode
+	 * @param city
+	 * @param contact
+	 */
+	public Address(String street, String houseNumber, String zipCode, String city, Contact contact) {
+		super();
+		this.street = street;
+		this.houseNumber = houseNumber;
+		this.zipCode = zipCode;
+		this.city = city;
+		this.contact = contact;
+	}
+	public Address() {
+		// TODO Auto-generated constructor stub
+	}	
 	
 }

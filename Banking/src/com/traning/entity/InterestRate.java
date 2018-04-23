@@ -18,5 +18,13 @@ public class InterestRate {
 		this.interestRate = interestRate;
 	}
 
+	/**
+	 * @param interestRate
+	 */
+	public InterestRate(float interestRate) {
+		super();
+		this.interestRate = interestRate;
+	}
+
 	
 }

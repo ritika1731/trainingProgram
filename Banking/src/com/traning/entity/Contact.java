@@ -10,6 +10,22 @@ abstract class Contact {
 	public List<Bank> bank;
 
 	/**
+	 * @param phone
+	 * @param mobile
+	 * @param email
+	 * @param address
+	 * @param bank
+	 */
+	public Contact(PhoneNumber phone, PhoneNumber mobile, Email email, com.traning.entity.Address address,
+			List<Bank> bank) {
+		super();
+		this.phone = phone;
+		this.mobile = mobile;
+		this.email = email;
+		Address = address;
+		this.bank = bank;
+	}
+	/**
 	 * @return the bank
 	 */
 	public List<Bank> getBank() {

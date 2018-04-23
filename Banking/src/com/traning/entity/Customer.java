@@ -10,19 +10,81 @@ public class Customer {
 	public List<Contact> contact;
 	public List<Bank> bank;
 	public List<Account> account;
+	private float initial_Amount=1000;
+	private String accountType;
 
-
+	/**
+	 * @return the accountType
+	 */
+	public String getAccountType() {
+		return accountType;
+	}
+	/**
+	 * @param accountType the accountType to set
+	 */
+	public void setAccountType(String accountType) {
+		this.accountType = accountType;
+	}
+	/**
+	 * @return the initial_Amount
+	 */
+	public float getInitial_Amount() {
+		return initial_Amount;
+	}
+	/**
+	 * @param initial_Amount the initial_Amount to set
+	 */
+	public void setInitial_Amount(float initial_Amount) {
+		this.initial_Amount = initial_Amount;
+	}
 	/**
 	 * @return the contact
 	 */
 	public List<Contact> getContact() {
 		return contact;
 	}
+	
+	
+	public Customer() {
+		// TODO Auto-generated constructor stub
+	}
+	/**
+	 * @param customerId
+	 * @param firstName
+	 * @param lastName
+	 * @param contact
+	 * @param bank
+	 * @param account
+	 * @param initial_Amount
+	 */
+	
 	/**
 	 * @param contact the contact to set
 	 */
 	public void setContact(List<Contact> contact) {
 		this.contact = contact;
+	}
+	/**
+	 * @param customerId
+	 * @param firstName
+	 * @param lastName
+	 * @param contact
+	 * @param bank
+	 * @param account
+	 * @param initial_Amount
+	 * @param accountType
+	 */
+	public Customer(String customerId, String firstName, String lastName, List<Contact> contact, List<Bank> bank,
+			List<Account> account, float initial_Amount, String accountType) {
+		super();
+		this.customerId = customerId;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.contact = contact;
+		this.bank = bank;
+		this.account = account;
+		this.initial_Amount = initial_Amount;
+		this.accountType = accountType;
 	}
 	/**
 	 * @return the bank
