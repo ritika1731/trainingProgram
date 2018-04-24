@@ -15,7 +15,7 @@ public class CustomerController {
 		      Customer cust1= (Customer) context.getBean("entity2");
 		      
 		      System.out.println(cust.getFirstName());
-		      System.out.println(cust.getLastName());
+		      System.out.println(cust1.getLastName());
 	}
 	
 }
