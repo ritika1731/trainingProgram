@@ -1,93 +1,53 @@
 package com.training.entity;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
-abstract class Contact {
-	private PhoneNumber phone;
-	private PhoneNumber mobile;
-	private Email email;
-	public Address Address;
-	public List<Bank> bank;
-
-	/**
-	 * @param phone
-	 * @param mobile
-	 * @param email
-	 * @param address
-	 * @param bank
-	 */
-	public Contact(PhoneNumber phone, PhoneNumber mobile, Email email, com.training.entity.Address address,
-			List<Bank> bank) {
-		super();
-		this.phone = phone;
-		this.mobile = mobile;
-		this.email = email;
-		Address = address;
-		this.bank = bank;
-	}
-	/**
-	 * @return the bank
-	 */
-	public List<Bank> getBank() {
-		return bank;
-	}
-	/**
-	 * @param bank the bank to set
-	 */
-	public void setBank(List<Bank> bank) {
-		this.bank = bank;
+interface  Contact {
+	List <PhoneNumber> mobile=new ArrayList<PhoneNumber>();
+	List <PhoneNumber> phone=new ArrayList<PhoneNumber>();
+	List <Email> email=new ArrayList<Email>();
+	
+	Bank bank=new Bank();
+	Scanner sc=new Scanner(System.in);
+	
+	public static void display() {
+		System.out.println("Enter phone number");
+		String pn = sc.next();
+		addPhone(pn);
 	}
 	
-	/**
-	 * @return the email
-	 */
-	public Email getEmail() {
-		return email;
+	public static void addPhone(String phoneNum) {
+		PhoneNumber phoneNo=new PhoneNumber();
+		phoneNo.setPhone(phoneNum);
+		phone.add(phoneNo);
 	}
 	
-	/**
-	 * @param email the email to set
-	 */
-	public void setEmail(Email email) {
-		this.email = email;
+	public static void addMobile(String mobileNum) {
+		PhoneNumber mobileNo=new PhoneNumber();
+		System.out.println("Enter mobile address");
+		mobileNum = sc.next();
+		mobileNo.setPhone(sc.next());
+		mobile.add(mobileNo);
 	}
-	/**
-	 * @return the address
-	 */
-	public Address getAddress() {
-		return Address;
+
+	public static void addEmail() {
+		Email mail=new Email();
+		System.out.println("Enter email address");
+		mail.setEmail(sc.next());
+		email.add(mail);
 	}
-	/**
-	 * @param address the address to set
-	 */
-	public void setAddress(Address address) {
-		Address = address;
-	}
-	/**
-	 * @return the phone
-	 */
-	public PhoneNumber getPhone() {
-		return phone;
-	}
-	/**
-	 * @param phone the phone to set
-	 */
-	public void setPhone(PhoneNumber phone) {
-		this.phone = phone;
-	}
-	/**
-	 * @return the mobile
-	 */
-	public PhoneNumber getMobile() {
+	
+	public static List<PhoneNumber> getMobile() {
 		return mobile;
 	}
-	/**
-	 * @param mobile the mobile to set
-	 */
-	public void setMobile(PhoneNumber mobile) {
-		this.mobile = mobile;
+	public static List<PhoneNumber> getPhone() {
+		return phone;
 	}
-	
+	public static List<Email> getEmail() {
+		return email;
+	}
 	
 	
 }

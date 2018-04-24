@@ -19,6 +19,9 @@ public class Bank {
 		this.branchName = branchName;
 		this.contact = contact;
 	}
+	public Bank() {
+		// TODO Auto-generated constructor stub
+	}
 	/**
 	 * @return the contact
 	 */

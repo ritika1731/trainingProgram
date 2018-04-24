@@ -4,7 +4,6 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import com.training.controller.BankController;
 import com.training.entity.CheckingAccount;
 import com.training.entity.FlexibleSavingAccount;
 import com.training.entity.SavingAccount;
@@ -15,9 +14,9 @@ public class BankingTest {
 	public void BankSave() {
 		SavingAccount account = new SavingAccount();
 
-		float balance=1000;
+		float balance=1500;
 		float interestRate=2;
-		float interestPeriod=5;
+		float interestPeriod=3;
 		
 		int expected=1100;
 		int actualResult = (int) account.deposit(100);
@@ -45,7 +44,7 @@ public class BankingTest {
 		FlexibleSavingAccount account1 = new FlexibleSavingAccount();
 
 		float balance=1000;
-		float interestRate=2;
+		float interestRate=7;
 		float interestPeriod=5;
 		
 		int expected=1100;
@@ -60,7 +59,7 @@ public class BankingTest {
 
 		float balance=1000;
 		float interestRate=2;
-		float interestPeriod=5;
+		float interestPeriod=8;
 		
 		int expected=1100;
 		int actualResult = (int) account1.withdraw(100);
@@ -72,7 +71,7 @@ public class BankingTest {
 		CheckingAccount account2 = new CheckingAccount();
 
 		float balance=1000;
-		float interestRate=2;
+		float interestRate=5;
 		float interestPeriod=5;
 		
 		int expected=1100;
@@ -85,7 +84,7 @@ public class BankingTest {
 		CheckingAccount account2 = new CheckingAccount();
 
 		float balance=1000;
-		float interestRate=2;
+		float interestRate=9;
 		float interestPeriod=5;
 		
 		int expected=1100;

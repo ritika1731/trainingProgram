@@ -27,6 +27,10 @@ public class Email {
 		this.email = email;
 	}
 
+	public Email() {
+		// TODO Auto-generated constructor stub
+	}
+
 
 	
 }
