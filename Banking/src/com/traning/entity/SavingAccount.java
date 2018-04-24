@@ -4,14 +4,25 @@ public class SavingAccount implements Account{
 	
 
 
-	Customer customer=new Customer();
-	float getbalance=customer.getInitial_Amount();
-	@Override
-	public void calculateInterest()
+	private Money money;
+	private InterestRate interestRate;
+	private Period interestPeriod;
+
+	public int deposit(int depositAmmount)
 	{
-	
-		float interest=(getbalance*9*1)/100;
-		System.out.println("Calculated Interest:"+interest);
+		
+		return money.getMoney()+depositAmmount;
+	}
+	public int withdrawl(int withdrawlAmmount)
+	{
+		return money.getMoney()-withdrawlAmmount;
 	}
 	
+	public int getBalance()
+	{
+		Scanner sc=new Scanner(System.in);
+		int interest=sc.nextInt();
+		interestRate.setInterestRate(interest);
+		return interestRate.getInterestRate()*money.getMoney()*interestPeriod.getPeriod()/100;
+	}
 }
