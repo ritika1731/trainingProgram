@@ -2,14 +2,25 @@ package com.traning.entity;
 
 public class CheckingAccount implements Account{
 
-	
-	Customer customer=new Customer();
-	float getbalance=customer.getInitial_Amount();
-	@Override
-	public void calculateInterest()
+	private Money money;
+	private InterestRate interestRate;
+	private Period interestPeriod;
+
+	public int deposit(int depositAmmount)
 	{
+		
+		return money.getMoney()+depositAmmount;
+	}
+	public int withdrawl(int withdrawlAmmount)
+	{
+		return money.getMoney()-withdrawlAmmount;
+	}
 	
-		float interest=(getbalance*4*1)/100;
-		System.out.println("Calculated Interest:"+interest);
+	public int getBalance()
+	{
+		Scanner sc=new Scanner(System.in);
+		int interest=sc.nextInt();
+		interestRate.setInterestRate(interest);
+		return interestRate.getInterestRate()*money.getMoney()*interestPeriod.getPeriod()/100;
 	}
 }
