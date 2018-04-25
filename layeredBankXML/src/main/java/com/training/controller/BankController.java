@@ -6,6 +6,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.training.entity.Address;
+import com.training.entity.Customer;
 import com.training.service.BankService;
 import com.training.service.BankServiceImpl;
 
@@ -46,9 +47,8 @@ public class BankController {
 					String fname=sc.next();
 					System.out.println("LastName:");
 					String lname=sc.next();
-					System.out.println("street:");
-					String street=sc.next();
-					address.setStreet(street);
+					Customer cust=new Customer(id,fname,lname,address);
+					service.addCustomer();
 					
 					break;
 				case 2:
