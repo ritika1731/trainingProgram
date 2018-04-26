@@ -15,7 +15,7 @@ public class Bank extends Account{
 	/**
 	 * @param bankName the bankName to set
 	 */
-	public void setBankName(String bankName) {
+	public void setBankName(final String bankName) {
 		this.bankName = bankName;
 	}
 	/**
@@ -27,7 +27,7 @@ public class Bank extends Account{
 	/**
 	 * @param branchName the branchName to set
 	 */
-	public void setBranchName(String branchName) {
+	public void setBranchName(final String branchName) {
 		this.branchName = branchName;
 	}
 	

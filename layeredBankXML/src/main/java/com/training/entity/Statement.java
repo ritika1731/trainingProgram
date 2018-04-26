@@ -16,7 +16,7 @@ public class Statement {
 	/**
 	 * @param date the date to set
 	 */
-	public void setDate(Date date) {
+	public void setDate(final Date date) {
 		this.date = date;
 	}
 	/**
@@ -28,7 +28,7 @@ public class Statement {
 	/**
 	 * @param content the content to set
 	 */
-	public void setContent(String content) {
+	public void setContent(final String content) {
 		this.content = content;
 	}
 

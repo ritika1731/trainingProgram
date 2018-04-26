@@ -8,19 +8,19 @@ public class Account extends Statement {
 	public float getBalance() {
 		return balance;
 	}
-	public void setBalance(float balance) {
+	public void setBalance( final float balance) {
 		this.balance = balance;
 	}
 	public float getInterestRate() {
 		return interestRate;
 	}
-	public void setInterestRate(float interestRate) {
+	public void setInterestRate(final float interestRate) {
 		this.interestRate = interestRate;
 	}
 	public float getInterestPeriod() {
 		return interestPeriod;
 	}
-	public void setInterestPeriod(float interestPeriod) {
+	public void setInterestPeriod(final float interestPeriod) {
 		this.interestPeriod = interestPeriod;
 	}
 }

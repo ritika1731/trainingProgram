@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+import org.apache.log4j.Logger;
+
 //import org.apache.log4j.Logger;
 
 import com.training.entity.Account;
@@ -11,7 +13,7 @@ import com.training.entity.Account;
 import com.training.entity.Customer;
 
 public class BankDaoImpl implements BankDao{
-//public final static Logger logger = Logger.getLogger(BankDaoImpl.class.getName());
+public final static Logger logger = Logger.getLogger(BankDaoImpl.class.getName());
 
 	Account account=new Account();
 	Scanner sc=new Scanner(System.in);
@@ -37,13 +39,13 @@ public class BankDaoImpl implements BankDao{
 
 	@Override
 	public float getBalance() {
-		System.out.println("Enter interestRate:");
+		logger.info("Enter interestRate:");
 		final int interest=sc.nextInt();
 		account.setInterestRate(interest);
-		System.out.println("Enter interestPeriod:");
+		logger.info("Enter interestPeriod:");
 		final int interestPeriod=sc.nextInt();
 		account.setInterestPeriod(interestPeriod);
-		System.out.println("Enter balance:");
+		logger.info("Enter balance:");
 		final int balance=sc.nextInt();
 		account.setBalance(balance);
 		return account.getInterestRate()*account.getBalance()*account.getInterestPeriod()/100;
@@ -55,10 +57,10 @@ public class BankDaoImpl implements BankDao{
 		if (map.containsKey(customerId)) {
 			final Customer customerDetails = map.get(customerId);
 			//Contact contact=new Contact();
-			System.out.println(customerDetails.getFirstName()+" " +customerDetails.getLastName());
-			System.out.println("Current balance is: "+customerDetails.getCurrentBalance());
+			logger.info(customerDetails.getFirstName()+" " +customerDetails.getLastName());
+			logger.info("Current balance is: "+customerDetails.getCurrentBalance());
 		} else {
-			System.out.println("No such user");
+			logger.info("No such user");
 		}
 		return 0;
 	}

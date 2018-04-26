@@ -10,7 +10,7 @@ import com.training.dao.BankDaoImpl;
 public class BankingTest {
 	BankDao account = new BankDaoImpl();
 	@Test
-	public void BankSave() {
+	public void bankSave() {
 		
 		float balance=1500;
 		float interestRate=2;
@@ -23,15 +23,15 @@ public class BankingTest {
 		
 	}
 	@Test
-	public void BankSave1() {
+	public void bankSave1() {
 	
-
-		float balance=1000;
-		float interestRate=2;
-		float interestPeriod=5;
-		
-		int expected=1100;
-		int actualResult = (int) account.withdraw(100);
+/*
+		final float balance=1000;
+		final float interestRate=2;
+		final float interestPeriod=5;
+		*/
+		final int expected=1100;
+		final int actualResult = (int) account.withdraw(100);
 		assertEquals(expected, actualResult);
 
 		

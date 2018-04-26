@@ -12,19 +12,19 @@ public class Contact extends Address{
 	public String getPhone() {
 		return phone;
 	}
-	public void setPhone(String phone) {
+	public void setPhone(final String phone) {
 		this.phone = phone;
 	}
 	public String getMobile() {
 		return mobile;
 	}
-	public void setMobile(String mobile) {
+	public void setMobile(final String mobile) {
 		this.mobile = mobile;
 	}
 	public Contact() {
 		super();
 	}
-	public Contact(String phone, String mobile, String email) {
+	public Contact(final String phone,final  String mobile, final String email) {
 		super();
 		this.phone = phone;
 		this.mobile = mobile;
@@ -33,7 +33,7 @@ public class Contact extends Address{
 	public String getEmail() {
 		return email;
 	}
-	public void setEmail(String email) {
+	public void setEmail(final String email) {
 		this.email = email;
 	}
 }

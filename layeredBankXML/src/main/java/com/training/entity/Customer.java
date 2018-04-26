@@ -14,13 +14,13 @@ public class Customer extends Account{
 	public float getCurrentBalance() {
 		return currentBalance;
 	}
-	public void setCurrentBalance(float currentBalance) {
+	public void setCurrentBalance(final float currentBalance) {
 		this.currentBalance = currentBalance;
 	}
 
 	
-	public Customer(String customerId, String firstName, String lastName, float currentBalance, Address address,
-			Contact contact) {
+	public Customer(final String customerId,final  String firstName,final String lastName, final float currentBalance,final  Address address,
+			final Contact contact) {
 		super();
 		this.customerId = customerId;
 		this.firstName = firstName;
@@ -35,14 +35,14 @@ public class Customer extends Account{
 	public Address getAddress() {
 		return address;
 	}
-	public void setAddress(Address address) {
+	public void setAddress(final Address address) {
 		this.address = address;
 	}
 	
 	public Contact getContact() {
 		return contact;
 	}
-	public void setContact(Contact contact) {
+	public void setContact( final Contact contact) {
 		this.contact = contact;
 	}
 	@Override
@@ -59,7 +59,7 @@ public class Customer extends Account{
 	/**
 	 * @param customerId the customerId to set
 	 */
-	public void setCustomerId(String customerId) {
+	public void setCustomerId(final String customerId) {
 		this.customerId = customerId;
 	}
 	/**
@@ -71,7 +71,7 @@ public class Customer extends Account{
 	/**
 	 * @param firstName the firstName to set
 	 */
-	public void setFirstName(String firstName) {
+	public void setFirstName(final String firstName) {
 		this.firstName = firstName;
 	}
 	/**
@@ -83,7 +83,7 @@ public class Customer extends Account{
 	/**
 	 * @param lastName the lastName to set
 	 */
-	public void setLastName(String lastName) {
+	public void setLastName(final String lastName) {
 		this.lastName = lastName;
 	}
 	

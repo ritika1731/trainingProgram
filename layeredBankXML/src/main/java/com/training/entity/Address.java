@@ -23,7 +23,7 @@ public class Address {
 	/**
 	 * @param street the street to set
 	 */
-	public void setStreet(String street) {
+	public void setStreet( final String street) {
 		this.street = street;
 	}
 	/**
@@ -35,7 +35,7 @@ public class Address {
 	/**
 	 * @param houseNumber the houseNumber to set
 	 */
-	public void setHouseNumber(String houseNumber) {
+	public void setHouseNumber(final String houseNumber) {
 		this.houseNumber = houseNumber;
 	}
 	/**
@@ -47,7 +47,7 @@ public class Address {
 	/**
 	 * @param zipCode the zipCode to set
 	 */
-	public void setZipCode(String zipCode) {
+	public void setZipCode(final String zipCode) {
 		this.zipCode = zipCode;
 	}
 	/**
@@ -59,7 +59,7 @@ public class Address {
 	/**
 	 * @param city the city to set
 	 */
-	public void setCity(String city) {
+	public void setCity( final String city) {
 		this.city = city;
 	}
 
@@ -75,7 +75,7 @@ public class Address {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Address(String street, String houseNumber, String zipCode, String city) {
+	public Address(final String street, final String houseNumber, final String zipCode, final String city) {
 		super();
 		this.street = street;
 		this.houseNumber = houseNumber;
