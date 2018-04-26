@@ -20,7 +20,7 @@ public class BankController {
 		ApplicationContext appContext=new ClassPathXmlApplicationContext("applicationContext.xml");
 		BankService service= appContext.getBean("bankService", BankServiceImpl.class);
 		Customer customer = (Customer) appContext.getBean("Customer");
-		Customer customer1 = (Customer) appContext.getBean("Customer1");
+		//Customer customer1 = (Customer) appContext.getBean("Customer1");
 		System.out.println("Customer Id: "+customer.getCustomerId());
 		System.out.println("Customer Name: "+customer.getFirstName()+" "+customer.getLastName());
 		System.out.println("Current Balance= " +(customer.getCurrentBalance()) );
@@ -29,6 +29,26 @@ public class BankController {
 		System.out.println("Statement="+service.addCustomer(customer));
 		System.out.println(	service.listCustomerId(customer.getCustomerId()));
 		
+		
+		System.out.println("Enter Balance to deposit:");
+//		float balanceDeposit=sc.nextFloat();
+		System.out.println("Enter Deposit Amount");
+		int depositAmount=sc.nextInt();
+
+		float balanceAmount=service.getBalance();
+		float deposit=service.deposit(depositAmount);
+		System.out.println(balanceAmount);
+		System.out.println(deposit);
+		
+		System.out.println("Enter Balance to deposit:");
+//		float balanceDeposit=sc.nextFloat();
+		System.out.println("Enter withdraw Amount");
+		int withdrawAmount=sc.nextInt();
+
+		float balanceAmount1=service.getBalance();
+		float withdraw=service.withdraw(withdrawAmount);
+		System.out.println(balanceAmount1);
+		System.out.println(withdraw);
 		
 	//service.deposit(customer.getCustomerId(),customer.getCustomerId(),400);
 

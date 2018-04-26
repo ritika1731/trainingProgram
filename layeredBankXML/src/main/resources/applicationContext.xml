@@ -42,9 +42,8 @@
 
 	</bean>
 
-	<bean name="bankDao" class="com.training.service.BankDaoImpl"></bean>
-	<bean name="bankService"
-		class="com.training.service.BankServiceImpl">
+<!-- 	<bean name="bankDao" class="com.training.service.BankDaoImpl"></bean> -->
+	<bean name="bankService" class="com.training.service.BankServiceImpl">
 		<!-- <constructor-arg index="0" ref="bankDao"></constructor-arg> -->
 	</bean>
 
