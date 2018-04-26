@@ -2,53 +2,53 @@ package com.training.controller;
 
 import java.util.Scanner;
 
+import org.apache.log4j.Logger;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.training.entity.Contact;
 import com.training.entity.Customer;
 import com.training.service.BankService;
 import com.training.service.BankServiceImpl;
 
 public class BankController {
-	final static Scanner sc=new Scanner(System.in);
+	final private static Scanner sc=new Scanner(System.in);
+	private static Logger logger = Logger.getLogger(BankController.class.getName());
+	public static void main(final String[] args) {
 
-	public static void main(String[] args) {
 
-
-		Contact contact = new Contact();
-		ApplicationContext appContext=new ClassPathXmlApplicationContext("applicationContext.xml");
-		BankService service= appContext.getBean("bankService", BankServiceImpl.class);
-		Customer customer = (Customer) appContext.getBean("Customer");
+		//final Contact contact = new Contact();
+		final ApplicationContext appContext=new ClassPathXmlApplicationContext("applicationContext.xml");
+		final BankService service= appContext.getBean("bankService", BankServiceImpl.class);
+		final Customer customer = (Customer) appContext.getBean("Customer");
 		//Customer customer1 = (Customer) appContext.getBean("Customer1");
-		System.out.println("Customer Id: "+customer.getCustomerId());
-		System.out.println("Customer Name: "+customer.getFirstName()+" "+customer.getLastName());
-		System.out.println("Current Balance= " +(customer.getCurrentBalance()) );
-		System.out.println("Balance after Withdrawl of 100 = " +(customer.getCurrentBalance()-100) );
-		System.out.println("Balance after Deposit of 300 = " +((customer.getCurrentBalance()-100)+300) );
-		System.out.println("Statement="+service.addCustomer(customer));
-		System.out.println(	service.listCustomerId(customer.getCustomerId()));
+		logger.info("Customer Id: "+customer.getCustomerId());
+		logger.info("Customer Name: "+customer.getFirstName()+" "+customer.getLastName());
+		logger.info("Current Balance= " +(customer.getCurrentBalance()) );
+		logger.info("Balance after Withdrawl of 100 = " +(customer.getCurrentBalance()-100) );
+		logger.info("Balance after Deposit of 300 = " +((customer.getCurrentBalance()-100)+300) );
+		logger.info("Statement="+service.addCustomer(customer));
+		logger.info(service.listCustomerId(customer.getCustomerId()));
 		
 		
-		System.out.println("Enter Balance to deposit:");
+		logger.info("Enter Balance to deposit:");
 //		float balanceDeposit=sc.nextFloat();
-		System.out.println("Enter Deposit Amount");
-		int depositAmount=sc.nextInt();
+		logger.info("Enter Deposit Amount");
+		final int depositAmount=sc.nextInt();
 
-		float balanceAmount=service.getBalance();
-		float deposit=service.deposit(depositAmount);
-		System.out.println(balanceAmount);
-		System.out.println(deposit);
+		final float balanceAmount=service.getBalance();
+		final float deposit=service.deposit(depositAmount);
+		logger.info(balanceAmount);
+		logger.info(deposit);
 		
-		System.out.println("Enter Balance to deposit:");
+		logger.info("Enter Balance to deposit:");
 //		float balanceDeposit=sc.nextFloat();
-		System.out.println("Enter withdraw Amount");
-		int withdrawAmount=sc.nextInt();
+		logger.info("Enter withdraw Amount");
+		final int withdrawAmount=sc.nextInt();
 
-		float balanceAmount1=service.getBalance();
-		float withdraw=service.withdraw(withdrawAmount);
-		System.out.println(balanceAmount1);
-		System.out.println(withdraw);
+		final float balanceAmount1=service.getBalance();
+		final float withdraw=service.withdraw(withdrawAmount);
+		logger.info(balanceAmount1);
+		logger.info(withdraw);
 		
 	//service.deposit(customer.getCustomerId(),customer.getCustomerId(),400);
 
@@ -58,19 +58,19 @@ public class BankController {
 			while(true)
 			{
 
-				System.out.println("###################################");
-				System.out.println("1.Add Customer");
-				System.out.println("2.Deposit.");
-				System.out.println("3.Withdraw.");
-				System.out.println("4.Statement");
-				System.out.println("5.Exit.");
-				System.out.println("###################################");
-				System.out.println("Select your Choice");
+				logger.info("###################################");
+				logger.info("1.Add Customer");
+				logger.info("2.Deposit.");
+				logger.info("3.Withdraw.");
+				logger.info("4.Statement");
+				logger.info("5.Exit.");
+				logger.info("###################################");
+				logger.info("Select your Choice");
 
 				int choice =sc.nextInt();
 				if(choice<1 || choice >3)
 				{
-					System.out.println("Choice out of range. Try again");
+					logger.info("Choice out of range. Try again");
 					continue;
 				}
 				else
@@ -81,57 +81,57 @@ public class BankController {
 				case 1:
 					Customer customer=new Customer();
 					Address address=new Address();
-					System.out.println("CustomerId:");
+					logger.info("CustomerId:");
 					 id=sc.next();
 					customer.setCustomerId(id);
-					System.out.println("FirstName:");
+					logger.info("FirstName:");
 					String fname=sc.next();
 					customer.setFirstName(fname);
-					System.out.println("LastName:");
+					logger.info("LastName:");
 					String lname=sc.next();
 					customer.setLastName(lname);
-//					System.out.println("Street:");
+//					logger.info("Street:");
 //					String street=sc.next();
 					Customer cust=new Customer(id,fname,lname,address);
 
 					list.add(cust);
 					service.addCustomer();
-					//System.out.println(service.addCustomer());
+					//logger.info(service.addCustomer());
 
 					break;
 				case 2:
-					//System.out.println("CurrentBalance:"+balance);
-//					System.out.println("Enter Balance to deposit:");
+					//logger.info("CurrentBalance:"+balance);
+//					logger.info("Enter Balance to deposit:");
 //					float balanceDeposit=sc.nextFloat();
-					System.out.println("Enter Deposit Amount");
+					logger.info("Enter Deposit Amount");
 					int depositAmount=sc.nextInt();
 
 					float balanceAmount=service.getBalance();
 					float deposit=service.deposit(depositAmount);
-					System.out.println(balanceAmount);
-					System.out.println(deposit);
+					logger.info(balanceAmount);
+					logger.info(deposit);
 					break;
 				case 3:
-//					System.out.println("Enter Balance to deposit:");
+//					logger.info("Enter Balance to deposit:");
 //					float balanceDeposit=sc.nextFloat();
-					System.out.println("Enter withdraw Amount");
+					logger.info("Enter withdraw Amount");
 					int withdrawAmount=sc.nextInt();
 
 					float balanceAmount1=service.getBalance();
 					float withdraw=service.withdraw(withdrawAmount);
-					System.out.println(balanceAmount1);
-					System.out.println(withdraw);
+					logger.info(balanceAmount1);
+					logger.info(withdraw);
 					break;
 
 				case 4:
-					System.out.println("Statement");
-					System.out.println("Enter Customer id:");
+					logger.info("Statement");
+					logger.info("Enter Customer id:");
 					id=sc.next();
 					break;
 
 				case 5:
 					System.exit(0);
-					System.out.println("Thankyou");
+					logger.info("Thankyou");
 					break; 
 
 				}
