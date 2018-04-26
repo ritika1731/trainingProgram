@@ -1,6 +1,10 @@
 package com.training.entity;
 
 public class Contact extends Address{
+	@Override
+	public String toString() {
+		return "Contact [phone=" + phone + ", mobile=" + mobile + ", email=" + email + "]";
+	}
 	private String phone;
 	private String mobile;
 	private String email;
@@ -16,6 +20,15 @@ public class Contact extends Address{
 	}
 	public void setMobile(String mobile) {
 		this.mobile = mobile;
+	}
+	public Contact() {
+		super();
+	}
+	public Contact(String phone, String mobile, String email) {
+		super();
+		this.phone = phone;
+		this.mobile = mobile;
+		this.email = email;
 	}
 	public String getEmail() {
 		return email;

@@ -1,20 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:context="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
                            http://www.springframework.org/schema/beans/spring-beans.xsd
                            http://www.springframework.org/schema/context
                            http://www.springframework.org/schema/context/spring-context.xsd ">
 
+	<!-- <bean name="Customer" class="com.training.entity.Customer"> -->
+	<!-- <property name="customerId" value="1"></property> -->
+	<!-- <property name="firstName" value="ritika"></property> -->
+	<!-- <property name="lastName" value="verma"></property> -->
+	<!-- </bean> -->
+	<bean id="Contact" class="com.training.entity.Contact">
+		<constructor-arg value="123213" index="0"></constructor-arg>
+		<constructor-arg value="7789789" index="1"></constructor-arg>
+		<constructor-arg value="abc@gmail.com" index="2"></constructor-arg>
 
-  <bean name="bankService" class="com.training.service.BankServiceImpl">
-    <property name = "firstName" value = "ritika"/></bean>
-    <bean name="bankDao" class="com.training.service.BankDaoImpl">
-    <property name = "lastName" value = "verma"/>
-    </bean>
- 
+	</bean>
 
-	
+	<bean id="Address" class="com.training.entity.Address">
+		<constructor-arg value="asd" index="0"></constructor-arg>
+		<constructor-arg value="19" index="1"></constructor-arg>
+		<constructor-arg value="123123" index="2"></constructor-arg>
+		<constructor-arg value="mumbai" index="3"></constructor-arg>
+
+
+	</bean>
+
+	<bean id="Customer" class="com.training.entity.Customer">
+		<constructor-arg value="1" index="0"></constructor-arg>
+		<constructor-arg value="ritika" index="1"></constructor-arg>
+		<constructor-arg value="verma" index="2"></constructor-arg>
+		<constructor-arg value="2000" index="3"></constructor-arg>
+		<constructor-arg index="4">
+			<ref bean="Address" />
+		</constructor-arg>
+		<constructor-arg index="5">
+			<ref bean="Contact" />
+		</constructor-arg>
+
+	</bean>
+
+	<bean name="bankDao" class="com.training.service.BankDaoImpl"></bean>
+	<bean name="bankService"
+		class="com.training.service.BankServiceImpl">
+		<!-- <constructor-arg index="0" ref="bankDao"></constructor-arg> -->
+	</bean>
+
+	<!-- </bean> -->
 
 </beans>

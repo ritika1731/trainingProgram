@@ -2,6 +2,12 @@ package com.training.entity;
 
 public class Address {
 
+	@Override
+	public String toString() {
+		return "Address [street=" + street + ", houseNumber=" + houseNumber + ", zipCode=" + zipCode + ", city=" + city
+				+ "]";
+	}
+
 	private String street;
 	private String houseNumber;
 	private String zipCode;
