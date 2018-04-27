@@ -23,4 +23,18 @@ public class Account extends Statement {
 	public void setInterestPeriod(final float interestPeriod) {
 		this.interestPeriod = interestPeriod;
 	}
+	@Override
+	public String toString() {
+		return "Account [balance=" + balance + ", interestRate=" + interestRate + ", interestPeriod=" + interestPeriod
+				+ "]";
+	}
+	public Account() {
+		super();
+	}
+	public Account(final float balance,final float interestRate, final float interestPeriod) {
+		super();
+		this.balance = balance;
+		this.interestRate = interestRate;
+		this.interestPeriod = interestPeriod;
+	}
 }

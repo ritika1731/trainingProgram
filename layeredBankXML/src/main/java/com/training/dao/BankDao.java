@@ -12,5 +12,5 @@ public interface BankDao {
 	public float withdraw(int withdrawAmount);
 	public float getBalance();
 	public int listCustomerId(String customerId);
-
+	public void updateDetails(Customer cust,int mobile);
 }

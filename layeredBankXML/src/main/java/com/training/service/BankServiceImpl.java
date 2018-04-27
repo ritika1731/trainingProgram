@@ -8,7 +8,7 @@ import com.training.entity.Customer;
 
 public class BankServiceImpl implements BankService{
 
-	BankDao dao=new BankDaoImpl();
+	public BankDao dao=new BankDaoImpl();
 
 	@Override
 	public float deposit(final int depositAmount) {

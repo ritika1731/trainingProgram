@@ -9,15 +9,29 @@ import org.apache.log4j.Logger;
 //import org.apache.log4j.Logger;
 
 import com.training.entity.Account;
-
+import com.training.entity.Contact;
 import com.training.entity.Customer;
 
 public class BankDaoImpl implements BankDao{
 public final static Logger logger = Logger.getLogger(BankDaoImpl.class.getName());
-
+	Customer customer=new Customer();
 	Account account=new Account();
 	Scanner sc=new Scanner(System.in);
 	Map<String,Customer> map=new HashMap<String, Customer>();
+	
+	
+	/*public BankDaoImpl(Account account, Scanner sc, Map<String, Customer> map) {
+		super();
+		this.account = account;
+		this.sc = sc;
+		this.map = map;
+	}*/
+
+	public Map<String, Customer> getMap() {
+		
+		return map;
+	}
+	
 	@Override
 	public float deposit(final int depositAmount) {
 		return account.getBalance()+depositAmount;
@@ -64,7 +78,12 @@ public final static Logger logger = Logger.getLogger(BankDaoImpl.class.getName()
 		}
 		return 0;
 	}
+	
+	@Override
+	public void updateDetails(Customer cust,int mobile) {
 
-
+		Contact contact=cust.getContact();
+		contact.setMobile("123132");
+	}
 
 }

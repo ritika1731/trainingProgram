@@ -2,10 +2,12 @@ package com.training.controller;
 
 import java.util.Scanner;
 
+import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.training.dao.BankDao;
 import com.training.entity.Customer;
 import com.training.service.BankService;
 import com.training.service.BankServiceImpl;
@@ -14,11 +16,12 @@ public class BankController {
 	final private static Scanner sc=new Scanner(System.in);
 	private static Logger logger = Logger.getLogger(BankController.class.getName());
 	public static void main(final String[] args) {
-
+		BasicConfigurator.configure();
 
 		//final Contact contact = new Contact();
 		final ApplicationContext appContext=new ClassPathXmlApplicationContext("applicationContext.xml");
 		final BankService service= appContext.getBean("bankService", BankServiceImpl.class);
+		
 		final Customer customer = (Customer) appContext.getBean("Customer");
 		//Customer customer1 = (Customer) appContext.getBean("Customer1");
 		logger.info("Customer Id: "+customer.getCustomerId());
@@ -32,7 +35,7 @@ public class BankController {
 		
 		logger.info("Enter Balance to deposit:");
 //		float balanceDeposit=sc.nextFloat();
-		logger.info("Enter Deposit Amount");
+		logger.info("Enter Deposit Amount"); 
 		final int depositAmount=sc.nextInt();
 
 		final float balanceAmount=service.getBalance();

@@ -11,24 +11,8 @@ public class Customer extends Account{
 	private Contact contact;
 	
 	
-	public float getCurrentBalance() {
-		return currentBalance;
-	}
-	public void setCurrentBalance(final float currentBalance) {
-		this.currentBalance = currentBalance;
-	}
-
 	
-	public Customer(final String customerId,final  String firstName,final String lastName, final float currentBalance,final  Address address,
-			final Contact contact) {
-		super();
-		this.customerId = customerId;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.currentBalance = currentBalance;
-		this.address = address;
-		this.contact = contact;
-	}
+	
 	public Customer() {
 		// TODO Auto-generated constructor stub
 	}
@@ -45,11 +29,15 @@ public class Customer extends Account{
 	public void setContact( final Contact contact) {
 		this.contact = contact;
 	}
-	@Override
-	public String toString() {
-		return "Customer [customerId=" + customerId + ", firstName=" + firstName + ", lastName=" + lastName
-				+ ", currentBalance=" + currentBalance + ", address=" + address + ", contact=" + contact + "]";
+	
+	public float getCurrentBalance() {
+		return currentBalance;
 	}
+	public void setCurrentBalance(final float currentBalance) {
+		this.currentBalance = currentBalance;
+	}
+
+	
 	/**
 	 * @return the customerId
 	 */
@@ -88,8 +76,22 @@ public class Customer extends Account{
 	}
 	
 	
-	
+	@Override
+	public String toString() {
+		return "Customer [customerId=" + customerId + ", firstName=" + firstName + ", lastName=" + lastName
+				+ ", currentBalance=" + currentBalance + ", address=" + address + ", contact=" + contact + "]";
+	}
 
 
+	public Customer(final String customerId,final  String firstName,final String lastName, final float currentBalance,final  Address address,
+			final Contact contact) {
+		super();
+		this.customerId = customerId;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.currentBalance = currentBalance;
+		this.address = address;
+		this.contact = contact;
+	}
 
 }
